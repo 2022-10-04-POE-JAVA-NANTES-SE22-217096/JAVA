@@ -1,0 +1,48 @@
+
+Concevoir une BDD :
+	- Etape 1 : Analyser les données à stocker
+	- Etape 2 : Découper et structuer les données
+	- Etape 3 : Définir les relations
+	- Etape 4 : Définir les cardinalités
+
+
+Définir les relations et les cardinalités  
+
+	Relation : 
+		- One To One --> Une entité est relié à une seule autre entité.
+		- Many To One --> Plusieurs entités peuvent être relié à un même objet.
+		- One To Many --> Un même objet peut être relié à plusieurs entités.
+		- Many To Many --> Plusieurs objets peuvent être relié à plusieurs autres objets
+		
+	Exemple relation (Site et Client) :
+		- One To One --> Un site ne peut avoir qu'un client et vice-versa.
+		- Many To One --> Un site peut avoir plus client mais un client ne peut avoir qu'un site
+		- One To Many --> Un site ne peut avoir qu'un client mais un client peut avoir plusieurs sites.
+		- Many To Many --> Un site peut avoir plusieurs clients et un client peut avoir plusieurs sites.
+		
+	Cardinalités :
+		- 0.1 et 1.1 --> One
+		- 0.n et 1.n --> Many
+		
+	Exemple Cardinalités (One To Many Site et Client) :
+		1 : Site(One) ------TO------ (Many)Client
+		2 : Site(0.1 et 1.1) ------TO------ (0.n et 1.n)Client
+		3 : Site(1.1) ------TO------ (0.n)Client
+		
+--------
+
+Sujet 1 : Créer un CRM me permettant de gérer des commandes associé à des produits pour un client donné (3 tables : Commande, Produit, Client).
+
+X(X) ------TO------ (X)X(X) ------TO------ (X)X
+
+Correction : Client(0.n) ------TO------ (1.1)Commande(0.n) ------TO------ (0.n)Produit
+
+
+Sujet 2 : Créer un site de vente en ligne me permettant de gérer des produits avec leur variantes produits et leur fournisseur. (3 tables : Produit, Variante, Fournisseur)
+
+X(X) ------TO------ (X)X(X) ------TO------ (X)X
+
+Correction : Fournisseur(1.n) ------TO------ (1.1)Produit(1.n) ------TO------ (1.1)Variante
+
+--------
+
